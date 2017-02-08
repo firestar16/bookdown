@@ -1,0 +1,27 @@
+# Introduction 
+
+
+
+```{r nice-fig, fig.cap='Using ggplot2', out.width='80%',fig.align = 'center', message = FALSE, warning = FALSE}
+library(dplyr)
+library(ggplot2)
+mtcars$cyl <- as.factor(mtcars$cyl)
+mtcars %>%
+  ggplot(aes(x = wt, y = mpg, color = factor(cyl))) +
+  geom_point() +
+  facet_wrap(~am)
+```
+
+```{r}
+curve(dnorm(x, mean = 0, sd = 1), col = 'blue', lwd =2)
+```
+
+
+
+```{r nice-tab, tidy=FALSE}
+knitr::kable(
+  head(iris, 20), caption = 'Here is a nice table!',
+  booktabs = TRUE
+)
+```
+

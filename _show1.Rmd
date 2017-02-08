@@ -1,0 +1,19 @@
+---
+title: "show1"
+author: "John Garza"
+date: "February 7, 2017"
+output:
+  ioslides_presentation: default
+  slidy_presentation: default
+---
+
+```{r setup, include=FALSE}
+library(ggvis)
+```
+
+```{r echo = TRUE, message = FALSE}
+slider <- input_slider(10, 1000)
+mtcars %>% ggvis(~wt, ~mpg) %>%
+  layer_points(fill := "red", size := slider) %>%
+  layer_points(stroke := "black", fill := NA, size := slider)
+```

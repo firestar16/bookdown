@@ -1,0 +1,25 @@
+# Probability
+
+## Introduction
+
+## Probability and Inference
+```{r, echo = TRUE, warning = FALSE, message = FALSE}
+library(tidyverse)
+library(ggvis)
+library(htmlwidgets)
+library(threejs)
+library(dygraphs)
+```
+
+```{r}
+library(htmlwidgets)
+library(threejs)
+z <- seq(-10, 10, 0.01)
+x <- cos(z)
+y <- sin(z)
+scatterplot3js(x,y,z, color=rainbow(length(z)))
+```
+```{r}
+dygraph(discoveries, main = "Important Discoveries") %>% 
+  dyRoller(rollPeriod = 5)
+```

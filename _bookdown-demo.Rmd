@@ -1,0 +1,137 @@
+--- 
+title: "Online Notes for ACTS 131"
+author: "John Garza"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+description: "This is an experiment for using bookdown to generate course notes"
+---
+
+
+
+
+
+
+
+<!--chapter:end:index.Rmd-->
+
+# Introduction 
+
+
+
+```{r nice-fig, fig.cap='Using ggplot2', out.width='80%',fig.align = 'center', message = FALSE, warning = FALSE}
+library(dplyr)
+library(ggplot2)
+mtcars$cyl <- as.factor(mtcars$cyl)
+mtcars %>%
+  ggplot(aes(x = wt, y = mpg, color = factor(cyl))) +
+  geom_point() +
+  facet_wrap(~am)
+```
+
+```{r}
+curve(dnorm(x, mean = 0, sd = 1), col = 'blue', lwd =2)
+```
+
+
+
+```{r nice-tab, tidy=FALSE}
+knitr::kable(
+  head(iris, 20), caption = 'Here is a nice table!',
+  booktabs = TRUE
+)
+```
+
+
+<!--chapter:end:01-Introduction.Rmd-->
+
+# Probability
+
+<!--chapter:end:02-probability.Rmd-->
+
+# Discrete Distributions
+
+
+<!--chapter:end:03-discrete.Rmd-->
+
+# Continuous Distributions
+
+<!--chapter:end:04-continuous.Rmd-->
+
+# Multivariable Distributions
+
+<!--chapter:end:05-multivariable.Rmd-->
+
+# Functions of a Random Variable
+
+<!--chapter:end:06-functions.Rmd-->
+
+# The Central Limit Theorem
+
+<!--chapter:end:07-central.Rmd-->
+
+---
+title: "show1"
+author: "John Garza"
+date: "February 7, 2017"
+output:
+  ioslides_presentation: default
+  slidy_presentation: default
+---
+
+```{r setup, include=FALSE}
+library(ggvis)
+```
+
+```{r echo = TRUE, message = FALSE}
+slider <- input_slider(10, 1000)
+mtcars %>% ggvis(~wt, ~mpg) %>%
+  layer_points(fill := "red", size := slider) %>%
+  layer_points(stroke := "black", fill := NA, size := slider)
+```
+
+<!--chapter:end:show1.Rmd-->
+
+---
+title: "Untitled"
+author: "John Garza"
+date: "February 7, 2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## R Markdown
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+## Slide with Bullets
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+## Slide with R Output
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+
+
+<!--chapter:end:tre.Rmd-->
+

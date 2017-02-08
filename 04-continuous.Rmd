@@ -1,0 +1,17 @@
+# Continuous Distributions
+
+## Exponential Distributions
+
+```{r}
+library(tidyverse)
+expo_frame <- data_frame(x = seq(from = 0, to = 5, by =0.1))
+expo_frame %>%
+  mutate("lambda = 1"     = dexp(x, rate = 1))     %>%
+  mutate("lambda = 2"     = dexp(x, rate = 1 / 2)) %>%
+  mutate("lambda = 3"     = dexp(x, rate = 1 / 3)) %>%
+  gather(key = lambda, value = density, -x)        %>%
+  ggplot(aes(x = x, y = density, col = lambda)) +
+  geom_line() +
+  ggtitle("Exponential Density Functions")
+```
+
