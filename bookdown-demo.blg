@@ -1,0 +1,14 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: bookdown-demo.aux
+I couldn't open style file apalike.bst
+---line 19 of file bookdown-demo.aux
+ : \bibstyle{apalike
+ :                  }
+I'm skipping whatever remains of this command
+I couldn't open database file packages.bib
+---line 50 of file bookdown-demo.aux
+ : \bibdata{packages
+ :                  ,book}
+I'm skipping whatever remains of this command
+I found no database files---while reading file bookdown-demo.aux
+I found no style file---while reading file bookdown-demo.aux
+(There were 4 error messages)
